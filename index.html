@@ -30,7 +30,7 @@
   .wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 56px; }
   header { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
   .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--accent); color: var(--bg);
-            display: grid; place-items: center; font-size: 30px; font-weight: 700; flex: none; }
+            object-fit: cover; flex: none; }
   h1 { margin: 0; font-size: 30px; line-height: 1.2; }
   .tagline { margin: 4px 0 0; color: var(--muted); }
   .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 8px; }
@@ -63,7 +63,7 @@
 <div class="wrap">
 
   <header>
-    <div class="avatar" aria-hidden="true">OM</div>
+    <img class="avatar" src="photo.jpg" alt="Oualil Mbarek" width="84" height="84">
     <div>
       <h1>Oualil Mbarek · 王小兴</h1>
       <p class="tagline" data-en>Business Administration @ HIT Shenzhen · TikTok live-commerce host · Arabic · French · English · Chinese</p>
