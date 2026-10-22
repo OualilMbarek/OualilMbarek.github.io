@@ -75,7 +75,7 @@
   <nav class="links" aria-label="Links">
     <a class="btn primary" href="Oualil_Mbarek_CV_EN.pdf" download>⬇ CV (English)</a>
     <a class="btn primary" href="王小兴_简历_CN.pdf" download>⬇ 简历（中文）</a>
-    <a class="btn" href="mailto:oualilmbarek18@gmail.com">✉ Email</a>
+    <a class="btn" id="email" href="mailto:oualilmbarek18@gmail.com" title="Click to email me (the address is also copied)">✉ Email</a>
     <a class="btn" href="https://www.linkedin.com/in/oualil-mbarek/">in LinkedIn</a>
     <a class="btn" href="https://www.instagram.com/mbarek_oualil/">◎ Instagram</a>
     <a class="btn" href="https://wa.me/8615817269523">✆ WhatsApp</a>
@@ -197,6 +197,13 @@
                       document.documentElement.lang = cn ? "zh-CN" : "en"; };
   set(location.hash === "#cn");
   btn.addEventListener("click", () => { const cn = !document.body.classList.contains("cn"); set(cn); history.replaceState(null, "", cn ? "#cn" : "#"); });
+  // mailto does nothing on computers without a mail app, so also copy the address and show it
+  const em = document.getElementById("email");
+  em.addEventListener("click", () => {
+    navigator.clipboard?.writeText("oualilmbarek18@gmail.com");
+    em.textContent = "✓ Copied: oualilmbarek18@gmail.com";
+    setTimeout(() => { em.textContent = "✉ Email"; }, 4000);
+  });
   const wx = document.getElementById("wechat");
   wx.addEventListener("click", () => {
     navigator.clipboard?.writeText("Oualil_20").then(() => {
